@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- PersonVo 클래스의 객체 만들기  -->
+	<bean id="person" class="vo.PersonVo" lazy-init="true">
+	<property name="name">
+	<value>김이름</value>
+	</property>
+	
+	<property name="age">
+	<value>34</value>
+	</property>
+	
+	<property name="phone">
+	<value>01012341234</value>
+	</property>	
+	</bean>
+	
+</beans>
