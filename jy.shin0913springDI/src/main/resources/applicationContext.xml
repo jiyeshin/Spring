@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- vo.Sample이라는 클래스의 객체를 싱글톤으로 생성해주는 코드 -->
+	<bean id="sample" class="vo.Sample" p:num="10">
+
+		<!-- num에 10을 직접 대입 -->
+		<!-- <property name="num"> <value>10</value> </property> -->
+		<!--name이라는 id를 가진 bean을 대입 -->
+		<property name="name">
+			<ref bean="name" />
+		</property>
+	</bean>
+	
+	<bean id="name" class="java.lang.String" c:_0="라라라" /> <!-- o은 생성자의 첫번째 매개변수로 대입한다는 뜻. -->
+	<!-- <constructor-arg> <value>라라라</value> </constructor-arg> -->
+
+
+
+	<!-- vo.CollectionBean 클래스의 객체를 생성하는 코드 -->
+	<bean id="collection" class="vo.CollectionBean">
+		<property name="list">
+			<list>
+				<value>Array</value>
+				<value>ArrayList(Vector)</value>
+				<value>LinkedList</value>
+				<value>Stack</value>
+				<value>Queue</value>
+				<value>Deque</value>
+			</list>
+		</property>
+		<property name="set">
+			<set>
+				<value>HashSet(순서모름)</value>
+				<value>LinkedHashSet(입력순서)</value>
+				<value>TreeSet(크기순서)</value>
+			</set>
+		</property>
+		<property name="map">
+			<map>
+				<entry>
+					<key>
+						<value>HashMap</value>
+					</key>
+					<value> 키의 순서를 알 수 없음.</value>
+				</entry>
+				<entry>
+					<key>
+						<value>LinkedHashMap</value>
+					</key>
+					<value>키가 입력 순서대로</value>
+				</entry>
+				<entry>
+					<key>
+						<value>TreeMap</value>
+					</key>
+					<value>키가 크기 순서대로</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+
+</beans>
