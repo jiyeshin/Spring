@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="goods">
+	<select id="list" resultType="com.mybatis.domain.Goods">
+		select code, name, price, description from goods
+	</select>
+	
+	<insert id="insertgood" parameterType="com.mybatis.domain.Goods">
+	insert into Goods (code, name, price, description) values(#{code}, #{name}, #{price}, #{description})
+	</insert>
+</mapper>
