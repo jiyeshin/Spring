@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="regi">
+	<!-- register 테이블의 전체 데이터를 가져오는 sql -->
+	<!-- 파라미터타입은 where절 내용 있을 때만. 없으면 생략 -->
+	<select id="userlist" resultType="RegisterVO">
+		select * from register
+	</select>
+	
+	<!-- register 테이블에서 id로 데이터 조회하는 sql -->
+	<!-- 파라미터타입은 where절 속성값의 #{id}의 타입. -->
+	<select id="selectuser" resultType="RegisterVO" parameterType="java.lang.String">
+		select * from register where id=#{id}
+	</select>
+	
+	<!-- 데이터를 삽입하는 sql -->
+	<insert id="insertuser" parameterType="RegisterVO">
+		insert into register values(#{id}, #{pw}, #{name}, #{phone})
+	</insert>
+	
+	<!-- 데이터를 삽입하는 프로시저를 실행하는 구문 -->
+	<insert id="insertproc" parameterType="RegisterVO" statementType="CALLABLE">
+		{	
+			call insertregister(#{id}, #{pw}, #{name}, #{phone})
+		}
+	</insert>
+</mapper>
