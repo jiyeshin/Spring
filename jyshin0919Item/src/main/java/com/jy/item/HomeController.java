@@ -30,8 +30,8 @@ public class HomeController {
 	
 	@RequestMapping(value="detail", method= RequestMethod.GET)
 	//itemid 라는 파라미터를 정수로 itemid에 저장 
-	public String getItem(@RequestParam("itemid") int itemid, Model model) {
-		Item item = itemService.getItem(itemid);
+	public String getItem(@RequestParam("itemname") String itemname, Model model) {
+		Item item = itemService.getItem(itemname);
 		model.addAttribute("item", item);
 		return "detail";
 	}

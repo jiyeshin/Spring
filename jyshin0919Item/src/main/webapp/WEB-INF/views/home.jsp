@@ -17,7 +17,7 @@
  	<c:forEach var="item" items="${list}">
  		<tr style="background:#ededed">
  			<td align="right">${item.itemid}</td>	
- 			<td><a href="detail?itemid=${item.itemname}">${item.itemname}</a></td>	
+ 			<td><a href="detail?itemname=${item.itemname}">${item.itemname}</a></td>	
  			<td align="right">${item.price}</td>	
  		</tr>
  	</c:forEach> 	

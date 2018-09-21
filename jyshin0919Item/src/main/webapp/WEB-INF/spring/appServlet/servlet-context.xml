@@ -23,6 +23,6 @@
 	
 	<context:component-scan base-package="com.jy.item" />
 	
-	
+	<default-servlet-handler/>
 	
 </beans:beans>

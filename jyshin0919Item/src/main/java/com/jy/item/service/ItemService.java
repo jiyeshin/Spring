@@ -10,5 +10,5 @@ public interface ItemService {
 	public List<Item> iservice();
 	
 	//itemid로 하나의 데이터를 찾아오는 메소드 
-	public Item getItem(int itemid);
+	public Item getItem(String itemname);
 }

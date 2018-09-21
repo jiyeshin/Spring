@@ -13,10 +13,10 @@
  <!-- item 아이디로 하나의 데이터를 가져오는 sql  -->
   <select id="selectoneitem" 
   resultType="Item"
- parameterType="java.lang.Integer">
+ parameterType="java.lang.String">
  select itemid,itemname,price,description,pictureurl
 		from item
-		where itemid = #{itemid}
+		where itemname = #{itemname}
  </select>
  
   </mapper>

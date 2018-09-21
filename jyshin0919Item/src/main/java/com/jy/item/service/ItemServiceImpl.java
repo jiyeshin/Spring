@@ -21,7 +21,10 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public Item getItem(int itemid) {		
-		return itemdao.getItem(itemid);
+	public Item getItem(String itemname) {
+		return itemdao.getItem(itemname);
+	
 	}
+
+	
 }

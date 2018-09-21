@@ -9,5 +9,5 @@ public interface ItemDao {
 	public List<Item> listItem();
 	
 	//상세보기를 위한 메소드 
-	public Item getItem(int itemid);
+	public Item getItem(String itemname);
 }
